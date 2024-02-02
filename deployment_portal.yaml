@@ -1,0 +1,19 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal-app-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: portal-app
+  template:
+    metadata:
+      labels:
+        app: portal-app
+    spec:
+      containers:
+        - name: portal
+          image: dockerrissi/portal:v1
+
